@@ -31,7 +31,7 @@ Tech stack inside of the project(besides JS and React):
 
 
 
-You can checkout my project live here [search-with-dropdown](https://tillytaly.github.io/search-with-dropdown/).
+You can checkout my project live here [masonry-grid](https://Tillytaly.github.io/masonry-grid/).
 
 ## Installation 
 In order to open the project locally make sure you have [Node.js](https://nodejs.org/en/) and [NPM](https://www.npmjs.com/package/npm) installed on your computer.
