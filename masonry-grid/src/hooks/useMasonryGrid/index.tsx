@@ -1,15 +1,17 @@
-import { useState, useLayoutEffect, RefObject,} from "react";
-import { TUseMasonryGrid, TSettings } from "./types";
-
+import { useState, useLayoutEffect, RefObject } from "react";
+import { TUseMasonryGrid } from "./types";
+import { Breakpoint } from "../../types.ts";
 
 const defaultSettings = [
-  {minWidth: 0, columns: 1},
-  {minWidth: 600, columns: 2},
-  {minWidth: 1200, columns: 4},
-]
+  { minWidth: 0, columns: 1 },
+  { minWidth: 600, columns: 2 },
+  { minWidth: 1200, columns: 4 },
+];
 
-
-function useMasonryGrid(ref: RefObject<HTMLDivElement>, settings: TSettings[] = defaultSettings): TUseMasonryGrid {
+function useMasonryGrid(
+  ref: RefObject<HTMLDivElement>,
+  breakpoints: Breakpoint[] = defaultSettings
+): TUseMasonryGrid {
   const [columnCount, setColumnCount] = useState(0);
 
   useLayoutEffect(() => {
@@ -18,9 +20,8 @@ function useMasonryGrid(ref: RefObject<HTMLDivElement>, settings: TSettings[] = 
         (entries: ResizeObserverEntry[]) => {
           const entry = entries[0];
           const currentWidth = entry.contentRect.width;
-          console.log(entry);
-          const currentColumnSettings = settings.reduce(
-            (currVal: TSettings, nextVal: TSettings) => {
+          const currentColumnSettings = breakpoints.reduce(
+            (currVal: Breakpoint, nextVal: Breakpoint) => {
               if (
                 currentWidth >= currVal.minWidth &&
                 currentWidth < nextVal.minWidth
@@ -42,7 +43,7 @@ function useMasonryGrid(ref: RefObject<HTMLDivElement>, settings: TSettings[] = 
         resizeObserver.disconnect();
       };
     }
-  }, [ref, settings]);
+  }, [ref, breakpoints]);
 
   return [columnCount];
 }

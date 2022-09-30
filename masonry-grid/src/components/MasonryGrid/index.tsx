@@ -1,24 +1,15 @@
-import { useMasonryGrid } from "../../helpers/hooks/useMasonryGrid";
 import { useRef } from "react";
-import { TMasonryGridProps } from "./Types";
+import { useMasonryGrid } from "../../hooks/useMasonryGrid";
+import { MasonryGridProps } from "./types";
 import { MasonryCell } from "../MasonryCell";
 import styles from "./MasonryGrid.module.scss";
 const { masonryGrid } = styles;
 
-const columnSettings = [
-  { minWidth: 0, columns: 1 },
-  { minWidth: 600, columns: 2 },
-  { minWidth: 1200, columns: 4 },
-];
-
-const MasonryGrid = ({
-  photos,
-  settings,
-}:
-TMasonryGridProps) => {
+const MasonryGrid = ({ images, settings }: MasonryGridProps) => {
   const masonryGridRef = useRef<HTMLDivElement>(null);
-  const [columnCount] = useMasonryGrid(masonryGridRef, columnSettings);
-  const { columnGap, width, rowGap } = settings;
+  const { columnGap, width, rowGap, breakpoints } = settings;
+  const [columnCount] = useMasonryGrid(masonryGridRef, breakpoints);
+
   return (
     <div
       className={masonryGrid}
@@ -27,13 +18,12 @@ TMasonryGridProps) => {
         columnCount,
         columnGap,
         width,
-        fontSize: rowGap,
       }}
     >
-      {photos.length > 0 &&
-        photos.map((photo: string, index: number) => (
-          <div key={photo + index} style={{ marginBottom: "10px" }}>
-            <MasonryCell src={photo} />
+      {images.length > 0 &&
+        images.map(({ src, alt }, index: number) => (
+          <div key={src + index} style={{ marginBottom: rowGap }}>
+            <MasonryCell src={src} alt={alt} />
           </div>
         ))}
     </div>

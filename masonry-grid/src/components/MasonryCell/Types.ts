@@ -1,3 +1,4 @@
-export interface IMasonryCellProps{
-src: string
+export interface IMasonryCellProps {
+  src: string;
+  alt?: string;
 }

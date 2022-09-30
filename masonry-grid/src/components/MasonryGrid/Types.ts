@@ -1,10 +1,18 @@
-export interface TMasonryGridProps {
-  photos: string[];
-  settings: TMasonryGridSettings;
+import { Breakpoint } from "../../types.ts";
+
+export interface MasonryGridSettings {
+  width: string;
+  columnGap?: string | number;
+  rowGap?: string | number;
+  breakpoints?: Breakpoint[];
 }
 
-type TMasonryGridSettings = {
-  width?: string | number;
-  columnGap?: number;
-  rowGap?: number;
-};
+interface Img {
+  src: string;
+  alt?: string;
+}
+
+export interface MasonryGridProps {
+  images: Img[];
+  settings: MasonryGridSettings;
+}
