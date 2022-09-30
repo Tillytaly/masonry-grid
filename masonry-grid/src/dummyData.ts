@@ -39,16 +39,4 @@ const settings = {
   breakpoints: defaultBreakpoints,
 };
 
-export interface MasonryGridSettings {
-  width: string;
-  columnGap: string;
-  rowGap: string;
-  breakpoints: Breakpoint[];
-}
-
-interface Breakpoint {
-  minWidth: number;
-  columns: number;
-}
-
 export { pictures, settings };

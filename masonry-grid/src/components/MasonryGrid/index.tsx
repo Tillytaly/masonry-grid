@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useMasonryGrid } from "../../hooks/useMasonryGrid"
+import { useMasonryGrid } from "../../hooks/useMasonryGrid";
 import { MasonryGridProps } from "./types";
 import { MasonryCell } from "../MasonryCell";
 import styles from "./MasonryGrid.module.scss";
@@ -21,9 +21,9 @@ const MasonryGrid = ({ images, settings }: MasonryGridProps) => {
       }}
     >
       {images.length > 0 &&
-        images.map(({src, alt}, index: number) => (
+        images.map(({ src, alt }, index: number) => (
           <div key={src + index} style={{ marginBottom: rowGap }}>
-            <MasonryCell src={src} alt={alt}/>
+            <MasonryCell src={src} alt={alt} />
           </div>
         ))}
     </div>
