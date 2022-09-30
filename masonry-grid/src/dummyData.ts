@@ -33,7 +33,7 @@ const defaultBreakpoints = [
 ];
 
 const settings = {
-  width: "100%",
+  width: "80%",
   columnGap: 10,
   rowGap: 10,
   breakpoints: defaultBreakpoints,
