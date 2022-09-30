@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/masonry-grid/static/css/main.eeb901be.css",
+    "main.js": "/masonry-grid/static/js/main.ef563a96.js",
+    "static/js/787.9dca8e21.chunk.js": "/masonry-grid/static/js/787.9dca8e21.chunk.js",
+    "index.html": "/masonry-grid/index.html",
+    "main.eeb901be.css.map": "/masonry-grid/static/css/main.eeb901be.css.map",
+    "main.ef563a96.js.map": "/masonry-grid/static/js/main.ef563a96.js.map",
+    "787.9dca8e21.chunk.js.map": "/masonry-grid/static/js/787.9dca8e21.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eeb901be.css",
+    "static/js/main.ef563a96.js"
+  ]
+}
