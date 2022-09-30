@@ -27,6 +27,7 @@ All of the above Masonry Grid settings (breakpoints and styles) can be changed b
 Tech stack inside of the project(besides JS and React):
 [TypeScript](https://www.typescriptlang.org/),
 [Sass](https://sass-lang.com/),
+[ResizeObserver API](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver)
 
 
 
