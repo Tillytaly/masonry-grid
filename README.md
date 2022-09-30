@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+# Masonry Grid
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This projects goal was to implement a custom Masonry Grid. Masonry grid is a layout method. In this layout elements in one axis, usually veritcal one, are placed in grid, whereas horizontal axis uses a masonry layout.
 
-## Available Scripts
+For the purpose o this task a useMasonryGrid hook was implemented, where ResizeObserver API is used to determine current size of Masonry Grid container size, and consequently to determine how many collumns should be displayed on the screen. Hook useMasonryGrid takes breakpoints as one of the argument, therefore breakpoints can be customised by the user. With no breakpoints specified, useMasonryGrid hook will use its default breakpoints: 
 
-In the project directory, you can run:
+```
+defaultBreakpoints = [
+  { minWidth: 0, columns: 1 },
+  { minWidth: 600, columns: 2 },
+  { minWidth: 1200, columns: 4 },
+];
+```
 
-### `npm start`
+Style of Masonry Grid can also be changed. User can specify column gap, row gap or grid container width. For the purpose of this task following style properties were applied:
 
-Runs the app in the development mode.\
+```
+const settings = {
+  width: "80%",
+  columnGap: 10,
+  rowGap: 10,
+  breakpoints: defaultBreakpoints,
+};
+```
+All of the above Masonry Grid settings (breakpoints and styles) can be changed by adding *settings* to Masonry Grid component.
+
+Tech stack inside of the project(besides JS and React):
+[TypeScript](https://www.typescriptlang.org/),
+[Sass](https://sass-lang.com/),
+
+
+
+You can checkout my project live here [search-with-dropdown](https://tillytaly.github.io/search-with-dropdown/).
+
+## Installation 
+In order to open the project locally make sure you have [Node.js](https://nodejs.org/en/) and [NPM](https://www.npmjs.com/package/npm) installed on your computer.
+
+Use the console in your favourite IDE to clone the repository
+
+```bash
+git clone https://github.com/Tillytaly/masonry-grid.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd .\masonry-grid\
+```
+
+Run  `npm install` to install all necessary dependencies
+
+```bash
+npm install
+```
+
+and  `npm start` to run the app in development mode
+
+```bash
+npm start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
