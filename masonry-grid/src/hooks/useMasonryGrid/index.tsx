@@ -18,7 +18,6 @@ function useMasonryGrid(ref: RefObject<HTMLDivElement>, settings: TSettings[] = 
         (entries: ResizeObserverEntry[]) => {
           const entry = entries[0];
           const currentWidth = entry.contentRect.width;
-          console.log(entry);
           const currentColumnSettings = settings.reduce(
             (currVal: TSettings, nextVal: TSettings) => {
               if (
